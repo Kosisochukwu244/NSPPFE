@@ -1,0 +1,240 @@
+You are building a modern, responsive web application for the Nigerian School on Fusion Energy and Plasma Physics (NSFEPP).
+
+The goal is to:
+
+Educate
+
+Showcase credibility
+
+Highlight past events and activities using animated visual storytelling
+
+The app should feel:
+
+Scientific
+
+Credible
+
+Modern
+
+Clean
+
+Africa-forward, but globally professional
+
+🧱 TECH STACK REQUIREMENTS
+
+Use:
+
+React (with Vite or Next.js App Router)
+
+Tailwind CSS for styling
+
+Framer Motion for animations
+
+Optional: Swiper.js or GSAP for image sliders
+
+The app should be static-friendly (deployable on GitHub Pages / Vercel / Netlify).
+
+🧭 SITE STRUCTURE (Landing Page Focus)
+Sections:
+
+Hero Section
+
+Title: Nigerian School on Fusion Energy & Plasma Physics
+
+Subtitle: Advancing Fusion Science, Plasma Research & Capacity Building in Africa
+
+Call-to-action buttons:
+
+“Explore Our Work”
+
+“View Past Events”
+
+About Section
+
+Brief explanation of NSFEPP
+
+Mission, vision, and scientific focus
+
+Emphasize:
+
+Capacity building
+
+Research
+
+Collaboration
+
+Events Section (HIGH PRIORITY)
+👉 This is the most important section.
+
+🎥 EVENTS SECTION — DETAILED REQUIREMENTS
+Purpose
+
+Highlight past events, workshops, schools, conferences, and training sessions using animated visuals.
+
+Layout
+
+Section title: “Past Events & Activities”
+
+Grid or horizontal slider layout
+
+Each event displayed as a card
+
+Event Card Content
+
+Each card must include:
+
+Event name
+
+Year
+
+Short description
+
+Animated image gallery
+
+Optional tags:
+
+Workshop
+
+Conference
+
+Training
+
+School
+
+✨ ANIMATION REQUIREMENTS
+
+Use Framer Motion to implement:
+
+Fade-in + slide-up on scroll
+
+Image hover zoom
+
+Smooth image cross-fade slideshow
+
+Optional parallax scroll effect
+
+Staggered animation for multiple event cards
+
+Animations should feel:
+
+Smooth
+
+Professional
+
+Not flashy or childish
+
+🖼️ IMAGE HANDLING (IMPORTANT)
+YES — you WILL need to upload images
+Folder structure:
+/public
+  /events
+    /fusion-school-2023
+      img1.jpg
+      img2.jpg
+    /plasma-workshop-2024
+      img1.jpg
+      img2.jpg
+
+Image usage rules:
+
+Images must be:
+
+Optimized
+
+Lazy-loaded
+
+Responsive
+
+Use <img> or Next.js <Image />
+
+Do NOT hardcode external image URLs
+
+🧩 DATA STRUCTURE (Events)
+
+Create a structured data file:
+
+/data/events.js
+
+
+Each event object should look like:
+
+{
+  id: "fusion-school-2023",
+  title: "Nigerian Fusion Summer School",
+  year: "2023",
+  description: "Hands-on training on fusion energy and plasma diagnostics.",
+  images: [
+    "/events/fusion-school-2023/img1.jpg",
+    "/events/fusion-school-2023/img2.jpg"
+  ],
+  tags: ["Fusion", "Training", "School"]
+}
+
+
+The Events section should map over this data dynamically.
+
+🎨 DESIGN LANGUAGE
+
+Color palette:
+
+Deep blue
+
+Plasma purple
+
+Scientific gray
+
+White space for clarity
+
+Typography:
+
+Clean sans-serif (Inter / Poppins)
+
+Clear hierarchy (titles, subtitles, body)
+
+Style inspiration:
+
+CERN
+
+ITER
+
+NASA science pages
+
+Academic conference websites
+
+📱 RESPONSIVENESS
+
+Mobile-first design
+
+Events slider should:
+
+Become swipeable on mobile
+
+Grid on desktop
+
+Animations must not break on small screens
+
+⚙️ PERFORMANCE & QUALITY
+
+Component-based architecture
+
+Reusable EventCard component
+
+Accessible (alt text, semantic HTML)
+
+Smooth 60fps animations
+
+Clean, readable code
+
+🚀 BONUS (OPTIONAL BUT NICE)
+
+If time allows:
+
+Modal popup on event click showing:
+
+Full image gallery
+
+Extended description
+
+“View Gallery” button per event
+
+Dark mode toggle
