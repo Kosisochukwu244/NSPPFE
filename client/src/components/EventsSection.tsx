@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, Calendar, X } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { ChevronLeft, ChevronRight, Calendar, X, AlertCircle, RefreshCw } from "lucide-react";
 import EventCard from "./EventCard";
-import { events, type Event } from "@/data/events";
+import type { Event } from "@/data/events";
 
 export default function EventsSection() {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [filter, setFilter] = useState<string | null>(null);
+
+  const { data: events = [], isLoading, isError, refetch } = useQuery<Event[]>({
+    queryKey: ["/api/events"],
+  });
 
   const allTags = Array.from(new Set(events.flatMap((e) => e.tags)));
 
@@ -60,48 +66,79 @@ export default function EventsSection() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-2 mb-10"
-        >
-          <Button
-            variant={filter === null ? "default" : "outline"}
-            size="sm"
-            onClick={() => setFilter(null)}
-            data-testid="filter-all"
+        {!isLoading && allTags.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-2 mb-10"
           >
-            All Events
-          </Button>
-          {allTags.map((tag) => (
             <Button
-              key={tag}
-              variant={filter === tag ? "default" : "outline"}
+              variant={filter === null ? "default" : "outline"}
               size="sm"
-              onClick={() => setFilter(tag)}
-              data-testid={`filter-${tag.toLowerCase()}`}
+              onClick={() => setFilter(null)}
+              data-testid="filter-all"
             >
-              {tag}
+              All Events
             </Button>
-          ))}
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredEvents.map((event, index) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                index={index}
-                onViewGallery={handleViewGallery}
-              />
+            {allTags.map((tag) => (
+              <Button
+                key={tag}
+                variant={filter === tag ? "default" : "outline"}
+                size="sm"
+                onClick={() => setFilter(tag)}
+                data-testid={`filter-${tag.toLowerCase()}`}
+              >
+                {tag}
+              </Button>
             ))}
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        )}
 
-        {filteredEvents.length === 0 && (
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="space-y-4">
+                <Skeleton className="aspect-[4/3] rounded-md" />
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-4 w-1/2" />
+              </div>
+            ))}
+          </div>
+        ) : isError ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-16"
+          >
+            <AlertCircle className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground mb-4">Failed to load events. Please try again.</p>
+            <Button
+              variant="outline"
+              onClick={() => refetch()}
+              data-testid="button-retry-events"
+            >
+              <RefreshCw className="mr-2 h-4 w-4" />
+              Retry
+            </Button>
+          </motion.div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence mode="popLayout">
+              {filteredEvents.map((event, index) => (
+                <EventCard
+                  key={event.id}
+                  event={event}
+                  index={index}
+                  onViewGallery={handleViewGallery}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
+
+        {!isLoading && filteredEvents.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

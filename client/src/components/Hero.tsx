@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import heroImage from "@assets/generated_images/plasma_fusion_reactor_visualization.png";
 
 interface HeroProps {
   onExploreClick?: () => void;
@@ -16,7 +15,7 @@ export default function Hero({ onExploreClick, onEventsClick }: HeroProps) {
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(/api/images/hero)` }}
       />
       
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
