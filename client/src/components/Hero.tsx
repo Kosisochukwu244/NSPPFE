@@ -47,9 +47,9 @@ export default function Hero({ onExploreClick, onEventsClick }: HeroProps) {
           >
             Nigerian School on{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Fusion Energy
+              Plasma Physics
             </span>{" "}
-            & Plasma Physics
+            and Fusion Energy
           </motion.h1>
 
           <motion.p
@@ -58,7 +58,7 @@ export default function Hero({ onExploreClick, onEventsClick }: HeroProps) {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
           >
-            Advancing Fusion Science, Plasma Research & Capacity Building in Africa
+            Advancing Fusion Science, Plasma Research & Capacity Building in Nigeria and Africa
           </motion.p>
 
           <motion.div

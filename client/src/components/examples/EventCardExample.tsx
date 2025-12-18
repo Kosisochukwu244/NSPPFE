@@ -4,8 +4,8 @@ import type { Event } from "@/data/events";
 const mockEvent: Event = {
   id: "sample-event",
   title: "Nigerian Fusion Summer School",
-  year: "2024",
-  description: "Intensive two-week program covering fusion reactor fundamentals, plasma confinement, and magnetic field theory with hands-on laboratory sessions.",
+  year: "2025",
+  description: "Intensive one-week program covering fusion reactor fundamentals, plasma confinement, and magnetic field theory with hands-on laboratory sessions.",
   images: ["/api/images/workshop", "/api/images/lab"],
   tags: ["School", "Training", "Fusion"]
 };
@@ -14,7 +14,7 @@ export default function EventCardExample() {
   return (
     <div className="max-w-sm">
       <EventCard
-        event={mockEvent}
+        event={mockEvent} 
         index={0}
         onViewGallery={(event) => console.log("View gallery for:", event.title)}
       />

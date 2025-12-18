@@ -6,12 +6,12 @@ const features = [
   {
     icon: Atom,
     title: "Fusion Research",
-    description: "Advancing fundamental plasma physics and fusion energy research in Africa through cutting-edge experiments and theoretical studies."
+    description: "Advancing fundamental plasma physics and fusion energy research in Nigeria through cutting-edge experiments and theoretical studies."
   },
   {
     icon: GraduationCap,
     title: "Capacity Building",
-    description: "Training the next generation of African scientists and engineers in plasma physics and fusion technology through intensive programs."
+    description: "Training the next generation of Nigerian physicits and engineers in plasma physics and fusion technology through intensive programs."
   },
   {
     icon: Users,
@@ -37,10 +37,10 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            About NSFEPP
+            About NSPPFE
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            The Nigerian School on Fusion Energy and Plasma Physics is dedicated to advancing 
+            The Nigerian School on Plasma Physics and Fusion Energy is dedicated to advancing 
             fusion science research and building scientific capacity across Africa through 
             education, research, and international collaboration.
           </p>
@@ -89,7 +89,7 @@ export default function About() {
               by nurturing scientific talent and fostering international partnerships that 
               will shape the future of clean energy."
             </blockquote>
-            <p className="text-sm font-medium text-foreground">NSFEPP Mission Statement</p>
+            <p className="text-sm font-medium text-foreground">NSPPFE Mission Statement</p>
           </Card>
         </motion.div>
       </div>

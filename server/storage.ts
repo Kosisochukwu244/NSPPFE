@@ -34,16 +34,16 @@ export class MemStorage implements IStorage {
   private seedEvents() {
     const seedData: Event[] = [
       {
-        id: "fusion-summer-school-2024",
-        title: "Nigerian Fusion Summer School",
-        year: "2024",
+        id: "first-fusion-school-2025",
+        title: "Nigerian Fusion  School",
+        year: "2025",
         description: "Intensive two-week program covering fusion reactor fundamentals, plasma confinement, and magnetic field theory with hands-on laboratory sessions.",
         images: ["/api/images/workshop", "/api/images/lab"],
         tags: ["School", "Training", "Fusion"],
         order: 1
       },
       {
-        id: "plasma-diagnostics-workshop-2024",
+        id: "plasma-diagnostics-workshop-2025",
         title: "Plasma Diagnostics Workshop",
         year: "2024",
         description: "Advanced workshop on plasma measurement techniques including spectroscopy, interferometry, and probe diagnostics for fusion research.",
@@ -52,7 +52,7 @@ export class MemStorage implements IStorage {
         order: 2
       },
       {
-        id: "international-fusion-conference-2023",
+        id: "international-fusion-conference-2025",
         title: "West African Fusion Energy Conference",
         year: "2023",
         description: "International gathering of fusion scientists and researchers from across Africa and global institutions discussing collaborative research initiatives.",
@@ -61,7 +61,7 @@ export class MemStorage implements IStorage {
         order: 3
       },
       {
-        id: "reactor-engineering-school-2023",
+        id: "reactor-engineering-school-2025",
         title: "Tokamak Engineering School",
         year: "2023",
         description: "Specialized training program on tokamak reactor design, superconducting magnets, and plasma heating systems for aspiring fusion engineers.",
@@ -70,7 +70,7 @@ export class MemStorage implements IStorage {
         order: 4
       },
       {
-        id: "plasma-physics-fundamentals-2022",
+        id: "plasma-physics-fundamentals-2025",
         title: "Plasma Physics Fundamentals",
         year: "2022",
         description: "Foundation course covering plasma behavior, magnetohydrodynamics, and particle transport phenomena for graduate students and researchers.",
@@ -79,7 +79,7 @@ export class MemStorage implements IStorage {
         order: 5
       },
       {
-        id: "capacity-building-summit-2022",
+        id: "capacity-building-summit-2025",
         title: "African Capacity Building Summit",
         year: "2022",
         description: "Strategic summit focused on developing fusion research infrastructure and training programs across African institutions.",

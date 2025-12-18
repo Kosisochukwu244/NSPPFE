@@ -25,7 +25,7 @@ export default function Footer() {
                 <span className="font-semibold text-lg text-foreground">NSFEPP</span>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
-                Nigerian School on Fusion Energy and Plasma Physics. Advancing fusion 
+                Nigerian School on Plasma Physics and Fusion Energy . Advancing fusion 
                 science and building scientific capacity across Africa.
               </p>
             </motion.div>
@@ -44,11 +44,11 @@ export default function Footer() {
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>Lagos, Nigeria</span>
+                  <span>Nsukka, Nigeria</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Globe className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>www.nsfepp.org</span>
+                  <span>www.nsppfe.org</span>
                 </li>
               </ul>
             </motion.div>
@@ -98,7 +98,7 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground"
         >
-          <p>&copy; {currentYear} Nigerian School on Fusion Energy & Plasma Physics. All rights reserved.</p>
+          <p>&copy; {currentYear} Nigerian School on Plasma Physics and Fusion Energy. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

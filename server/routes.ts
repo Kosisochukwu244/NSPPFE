@@ -34,10 +34,10 @@ export async function registerRoutes(
 
   app.get("/api/images/:type", (req, res) => {
     const imageMap: Record<string, string> = {
-      workshop: "nsfepp_workshop_training_session.png",
-      facility: "fusion_research_facility_interior.png",
-      conference: "scientific_conference_presentation_hall.png",
-      lab: "plasma_physics_laboratory_training.png",
+      workshop: "img_32.jpg",
+      facility: "img_20.jpg",
+      conference: "img_35.jpg",
+      lab: "img_38.jpg",
       hero: "plasma_fusion_reactor_visualization.png"
     };
 
