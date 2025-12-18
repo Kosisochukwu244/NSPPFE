@@ -1,9 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "client/public/index.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "client/public/index.html" }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
 }
